@@ -1,0 +1,13 @@
+const express = require('express');
+const morgan = require('morgan');
+const cors = require('cors');
+const app = express();
+app.use(morgan('dev'));
+app.use(express.json());
+app.use(cors());
+app.use(express.urlencoded({extended: false}));
+app.use("/api/empleados", require('./routes/empleados.routes'));
+app.set('port', process.env.PORT || 4000);
+app.listen(app.get('port'));
+console.log('aplicacion en puerto', app.get('port'));
+module.exports = app;
