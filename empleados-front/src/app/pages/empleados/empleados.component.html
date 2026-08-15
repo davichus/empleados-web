@@ -1,0 +1,27 @@
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Profesion</th>
+            <th>Salario</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(empleado of empleados(); track empleado._id){
+              <tr>
+                <td>{{$index +1}}</td>
+                <td>{{empleado.nombre}}</td>
+                <td>{{empleado.apellido}}</td>
+                <td>{{empleado.profesion}}</td>
+                <td>{{empleado.salario}}</td>
+                <td>
+                  <button>Editar</button>
+                  <button>Borrar</button>
+                </td>
+              </tr>
+        }
+    </tbody>
+</table>
