@@ -1,5 +1,14 @@
-<table>
-    <thead>
+<div class="container mt-4">
+    <div class="d-flex justify-content-between 
+    aling-items-center mb-3">
+    <h2>Empleados</h2>
+    <a [routerLink]="['/empleados/registro']" class="btn btn-primary">
+        Agregar Empleado</a>
+    </div>
+    <div class="mt-2">
+<table class="table table-bordered 
+table-hover table-striped align-middle">
+    <thead class="table-dark">
         <tr>
             <th>#</th>
             <th>Nombre</th>
@@ -18,10 +27,12 @@
                 <td>{{empleado.profesion}}</td>
                 <td>{{empleado.salario}}</td>
                 <td>
-                  <button>Editar</button>
-                  <button>Borrar</button>
+                  <button class="btn btn-warning btn-sm me-2">Editar</button>
+                  <button class="btn btn-danger btn-sm me-2">Borrar</button>
                 </td>
               </tr>
         }
     </tbody>
 </table>
+   </div>
+</div>

@@ -1,3 +1,4 @@
+import { EmpleadoNuevoModelo } from './../../models/empleados/empleado-nuevo.model';
 import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core"
 import { Observable } from "rxjs";
@@ -15,13 +16,17 @@ export class EmpleadosService {
                 Observable<RespuestaApi<EmpleadosModelLista[]>> {
         return this.http.
             get<RespuestaApi<EmpleadosModelLista[]>>(this.apiUrl);
-    }
-
+    } 
     public getEmpleadoById(id: String)
            :Observable<RespuestaApi<EmpleadosModelLista>>{
             return this.http.
             get<RespuestaApi<EmpleadosModelLista>>
             (`${this.apiUrl}/${id}`);
+    }
+
+    public createEmpleado(empleado: EmpleadoNuevoModelo){
+        return this.http.post<RespuestaApi<EmpleadoNuevoModelo>>
+        (this.apiUrl, empleado);
     }
 
 }

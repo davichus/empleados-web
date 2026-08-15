@@ -1,0 +1,33 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card -header">
+            <h2>Registro de Empleados</h2>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="empleadoFormulario"
+             (ngSubmit)="guardar()">
+                <div class="mb-3">
+                    <label class="form-label">Nombre</label>
+                    <input type="text" class="form-control" 
+                     formControlName="nombre"/>
+                </div>
+                   <div class="mb-3">
+                    <label class="form-label">Apellido</label>
+                    <input type="text" class="form-control" 
+                     formControlName="apellido"/>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Profesión</label>
+                    <input type="text" class="form-control" 
+                     formControlName="profesion"/>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Salario</label>
+                    <input type="number" class="form-control" 
+                     formControlName="salario"/>
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>

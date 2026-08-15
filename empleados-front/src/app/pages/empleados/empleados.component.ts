@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { EmpleadosService } from '../../services/empleados/empleados.service';
 import { EmpleadosModelLista } from '../../models/empleados/empleados-lista.model';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-empleados',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './empleados.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
